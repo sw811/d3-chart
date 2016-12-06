@@ -1,0 +1,139 @@
+/**
+ * @file 上边地图、日历图样式
+ * @author dengxiaohong
+ */
+
+@color-1: #0289C3;
+@color-2: #76C0EF;
+@color-3: #74C141;
+@color-4: #F09837;
+@color-5: #FE4203;
+@color-6: #A90302;
+
+
+/* @color-1: #ffffb2;
+ @color-2: #fed976;
+ @color-3: #feb24c;
+ @color-4: #fd8d3c;
+ @color-5: #f03b20;
+ @color-6: #bd0026;*/
+
+.color-num(@n, @i: 1) when (@i =< @n) {
+    .level-@{i} span {
+        .inline-block;
+        background-color: ~"@{color-@{i}}";
+    }
+  .color-num(@n, (@i + 1));
+}
+
+.RdYlGn-num(@n, @i: 1) when (@i =< @n) {
+    .RdYlGn .qleve@{i} {
+        fill: ~"@{color-@{i}}";
+    }
+  .RdYlGn-num(@n, (@i + 1));
+}
+
+.wrapper {
+    .container {
+        .content {
+            &-top {
+                height: 604px;
+                border: 1px solid #DEDEDE;
+            }
+        }
+    }
+}
+
+.chinaMap {
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+.follow-dialog {
+    .mask,
+    .fdialog-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .mask {
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9;
+    }
+    .fdialog-wrap {
+        z-index: 10;
+        .fdialog-main {
+            position: absolute;
+            background: #fff;
+            text-align: center;
+            width: 1000px;
+            height: 240px;
+            top: 50%;
+            left: 50%;
+            margin-top: -120px;
+            margin-left: -500px;
+            padding-top: 40px;
+            .close {
+                cursor: pointer;
+                position: absolute;
+                display: block;
+                top: 14px;
+                right: 16px;
+                width: 20px;
+                height: 20px;
+                background: #fff url('../img/close.png');
+            }
+            .fdialog-desc {
+                h1 {
+                    font-size: 20px;
+                    text-align: center;
+                }
+            }
+            .fdialog-cont {
+               // padding-top: 35px;
+            }
+            .AQI-level {
+                padding-top: 10px;
+                color: #ccc;
+                font-size: 16px;
+                line-height: 24px;
+                li {
+                    padding: 0 5px;
+                    .inline-block;
+                    span {
+                        margin-bottom: -2px;
+                        width: 16px;
+                        margin-right: 5px;
+                        height: 16px;
+                    }
+                }
+                .color-num(6);
+            }
+        }
+    }
+}
+
+
+.calendar {
+    text-align: center;
+    svg {
+      font-size: 10px;
+      shape-rendering: crispEdges;
+    }
+
+    .day {
+      fill: #fff;
+      stroke: #000;
+      stroke-opacity: .1;
+    }
+
+    .month {
+      fill: none;
+      stroke: #000;
+      stroke-width: 2px;
+    }
+};
+
+.RdYlGn-num(6);

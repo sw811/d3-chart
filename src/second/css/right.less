@@ -1,0 +1,113 @@
+/**
+   * @file tab pieCharts style
+   * @author: zhangxuanjian
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+.wrap{
+    width: 410px;
+    margin: 0 auto;
+}
+
+.pie-tabs{
+    width : 410px;
+    box-shadow : 2px 1px #dedede;
+    margin-top: 33px;
+}
+.pie-tabs ul{
+    height : 40px;
+    background : #fefefe;
+    list-style : none;
+    border-bottom: 1px solid #dedede;
+    box-sizing:border-box;
+}
+
+.pie-tabs li{
+    float : left;
+    padding : 0 20px;
+    height : 40px;
+    border-width: 2px 1px 0 1px;
+    border-style: solid;
+    border-color: transparent;
+    line-height: 40px;
+    width: auto;
+    margin-left: 0;
+    font-size:0;/*目的是垂直居中文字，防止inline-block元素间间隙*/
+}
+// .pie-tabs li:before{/*设置参照物，给verticl-align提供参照物*/
+//     content: '';
+//     display: inline-block;
+//     vertical-align: middle;
+//     width: 0;/*防止参照物影响文字*/
+//     height: 100%;/*撑开布局*/
+// }
+.pie-tabs li.active{
+    color: #000;
+    border-color:#dedede;
+    border-top-color: #229bf8;
+    border-bottom-color: #fff;
+    background: #fff;
+}
+.pie-tabs p{/*需要居中的文字*/
+    display: inline-block;/*必须设置*/
+    font-size: 16px;/*必须设置，否则继承为0*/
+    vertical-align : middle;/*垂直对齐*/
+
+    cursor: pointer
+}
+
+.pie-tabs div{
+    display : none;
+    border :1px solid #d9d9d9;
+    border-right : none;
+    border-top : none;
+    border-bottom : none;
+    height : 84% ;
+    box-sizing:border-box;
+}
+.pie-tabs canvas{
+     background: #fff;
+}
+
+ .legend{
+    border-top: 1px solid #dedede;
+    background: transparent;
+    box-shadow : 2px 1px #dedede;
+    list-style: none;
+    height: 40px;
+}
+#legend-1,
+#legend-2,
+#legend-3{
+    background: #fefefe;
+}
+.legend li{
+    float: left;
+    height:38px;
+    font-size:14px;
+    vertical-align: middle;
+    padding:0 15px;
+}
+.legend i{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+/*.legend span{
+    display: inline-block;
+}*/
+.legend label{
+    display: inline-block;
+    text-align: center;
+    width: 8px;
+}
+.legend em{
+    font-weight: 900;
+    color: #229bf8;
+    text-decoration: underline;
+}

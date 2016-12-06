@@ -1,0 +1,32 @@
+@import "../../common/css/index.less";
+
+@import "./top.less";
+
+@import "./left.less";
+
+@import "./right.less";
+
+
+.wrapper {
+    .container {
+        .clearfix;
+        .content {
+            &-left,
+            &-right {
+                background-color: #fff;
+                float: left;
+                height: 500px;
+                width: 60%;
+            }
+            &-right {
+                padding-left: 4%;
+                width: 34%;
+            }
+        }
+    }
+}
+
+.hide {
+    display: none;
+}
+
